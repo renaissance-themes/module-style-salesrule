@@ -1,0 +1,15 @@
+{
+    "name": "renaissance/module-style-salesrule",
+    "description": "Renaissance Themes: Magento_SalesRule module styling",
+    "type": "magento2-component",
+    "license": "OSL-3.0",
+    "require": {
+        "renaissance/theme-frontend-open-source": "^1.0",
+        "magento/module-sales-rule": "*"
+    },
+    "extra": {
+        "map": [
+            ["module.css", "app/design/frontend/Renaissance/open-source/Magento_SalesRule/web/css/source/module.css"]
+        ]
+    }
+}

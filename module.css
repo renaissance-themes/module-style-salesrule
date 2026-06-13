@@ -1,0 +1,33 @@
+/* Vanilla/blank: Magento_SalesRule module CSS.
+   The "Apply Discount Code" form on the one-page checkout payment step
+   (.opc-wrapper .form-discount): blank caps its width and hides the field
+   label visually (the input placeholder / section title carry the caption).
+
+   Ported from blank's Magento_SalesRule/web/css/source/_module.less against
+   the COMPILED pub/static/frontend/Magento/blank css. styles-l ships no
+   SalesRule rules (the .form-discount .g-recaptcha margin in the compiled
+   css is the ReCaptchaFrontendUi module's, not this one).
+
+   What is CONSUMED, not re-implemented: the field/input/button skins are the
+   lib forms + buttons components; the coupon collapsible chrome on cart and
+   checkout is the Magento_Checkout port. Only the width cap and the sr-only
+   label live here. */
+@layer modules {
+
+  .opc-wrapper .form-discount {
+    max-width: 50rem; /* 500px */
+
+    /* the "Enter discount code" label is visually hidden
+       (blank .abs-visually-hidden) */
+    & .field .label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+  }
+}
